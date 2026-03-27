@@ -348,8 +348,10 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           </div>
           <div className="h-1 w-full bg-gray-100 rounded-full overflow-hidden">
             <div 
-              className="h-full bg-[#135c4e] transition-all duration-500 ease-out"
-              style={{ width: `${(step / 4) * 100}%` }}
+              className={cn(
+                "h-full bg-[#135c4e] transition-all duration-500 ease-out",
+                step === 1 ? "w-1/4" : step === 2 ? "w-2/4" : step === 3 ? "w-3/4" : "w-full"
+              )}
             />
           </div>
         </div>

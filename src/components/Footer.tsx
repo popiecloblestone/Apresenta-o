@@ -51,21 +51,6 @@ export default function Footer() {
               Araguaçu - TO<br />
               (63) 3384-1957
             </p>
-            <h4 className="text-xs font-accent font-bold tracking-wider uppercase mb-4 mt-6 text-white/60">Newsletter</h4>
-            <p className="text-sm text-white/80 mb-4">Receba novidades sobre saúde bucal e estética.</p>
-            <form className="flex" onSubmit={(e) => { e.preventDefault(); alert('Inscrição confirmada com sucesso!'); }}>
-              <input
-                type="email"
-                placeholder="Seu e-mail"
-                className="bg-white/10 border border-white/20 text-white placeholder-white/50 px-4 py-2 rounded-l-md focus:outline-none focus:ring-1 focus:ring-white/50 w-full text-sm"
-              />
-              <button
-                type="submit"
-                className="bg-[#0f4a3e] hover:bg-[#0c3a31] px-4 py-2 rounded-r-md text-sm font-accent font-medium transition-colors"
-              >
-                OK
-              </button>
-            </form>
           </div>
         </div>
 

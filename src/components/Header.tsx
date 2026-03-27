@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import BookingModal from './BookingModal';
+import { List, X } from '@phosphor-icons/react';
+import { useModal } from '../contexts/ModalContext';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { openBookingModal } = useModal();
 
   const navLinks = [
     { name: 'Clínicas', path: '/clinicas' },
@@ -21,7 +21,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <div className="flex-shrink-0 flex items-center">
+            <div className="shrink-0 flex items-center">
               <NavLink to="/tratamentos" className="text-2xl font-serif font-bold text-[#135c4e]">
                 Life Odontologia
               </NavLink>
@@ -47,7 +47,7 @@ export default function Header() {
             {/* CTA Button */}
             <div className="hidden md:flex items-center">
               <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={openBookingModal}
                 className="bg-[#135c4e] text-white px-6 py-2.5 rounded-md text-sm font-accent font-medium hover:bg-[#0f4a3e] transition-colors"
               >
                 Agendar Consulta
@@ -60,7 +60,7 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-gray-600 hover:text-[#135c4e] focus:outline-none"
               >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {isMenuOpen ? <X className="h-6 w-6" /> : <List className="h-6 w-6" />}
               </button>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function Header() {
               <button
                 onClick={() => {
                   setIsMenuOpen(false);
-                  setIsModalOpen(true);
+                  openBookingModal();
                 }}
                 className="w-full text-left block px-3 py-2 rounded-md text-base font-accent font-medium text-[#135c4e] hover:bg-gray-50"
               >
@@ -97,8 +97,6 @@ export default function Header() {
           </div>
         )}
       </header>
-
-      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }

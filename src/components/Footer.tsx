@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Share2, Globe } from 'lucide-react';
+import { ShareNetwork, Globe } from '@phosphor-icons/react';
 
 export default function Footer() {
   return (
@@ -10,13 +10,13 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-1">
             <h3 className="text-xl font-serif font-bold mb-4">Life Odontologia</h3>
             <p className="text-sm text-white/80 leading-relaxed">
-              Elevando a saúde bucal ao patamar de arte e bem-estar. Referência em odontologia moderna, unindo arte, ciência e tecnologia para criar sorrisos únicos.
+              Clínica odontológica de reabilitação e estética avançada. Investimos em tecnologia e previsibilidade para resultados duradouros.
             </p>
             <div className="flex space-x-4 mt-6">
-              <button className="text-white/80 hover:text-white transition-colors">
-                <Share2 className="h-5 w-5" />
+              <button onClick={() => window.open('https://instagram.com/lifeodontologia.ar', '_blank')} aria-label="Instagram" className="text-white/80 hover:text-white transition-colors">
+                <ShareNetwork className="h-5 w-5" />
               </button>
-              <button className="text-white/80 hover:text-white transition-colors">
+              <button aria-label="Website" className="text-white/80 hover:text-white transition-colors">
                 <Globe className="h-5 w-5" />
               </button>
             </div>
@@ -47,12 +47,13 @@ export default function Footer() {
           <div>
             <h4 className="text-xs font-accent font-bold tracking-wider uppercase mb-4 text-white/60">Contato</h4>
             <p className="text-sm text-white/80 mb-4">
-              Av. Paulista, 1000 - São Paulo, SP<br />
-              (11) 3214-5500
+              Rua 06, nº 28 - Setor Central<br />
+              Araguaçu - TO<br />
+              (63) 3384-1957
             </p>
             <h4 className="text-xs font-accent font-bold tracking-wider uppercase mb-4 mt-6 text-white/60">Newsletter</h4>
             <p className="text-sm text-white/80 mb-4">Receba novidades sobre saúde bucal e estética.</p>
-            <form className="flex">
+            <form className="flex" onSubmit={(e) => { e.preventDefault(); alert('Inscrição confirmada com sucesso!'); }}>
               <input
                 type="email"
                 placeholder="Seu e-mail"
@@ -70,7 +71,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs text-white/60 text-center md:text-left">
-            © 2024 Life Odontologia. Excelência em Saúde Bucal. Arquitetural. CRO/SP: 00.000
+            © 2024 Life Odontologia. Todos os direitos reservados. CRO/SP: 00.000
           </p>
         </div>
       </div>

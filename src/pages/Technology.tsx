@@ -1,6 +1,8 @@
-import { CheckCircle2, Target, Shield, Leaf } from 'lucide-react';
+import { CheckCircle, Target, Shield, Leaf } from '@phosphor-icons/react';
+import { useModal } from '../contexts/ModalContext';
 
 export default function Technology() {
+  const { openBookingModal } = useModal();
   return (
     <div className="bg-[#fafafa]">
       {/* Hero Section */}
@@ -8,20 +10,17 @@ export default function Technology() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block py-1 px-3 rounded-full bg-white/50 text-[#135c4e] text-xs font-accent font-bold tracking-wider uppercase mb-6 border border-[#135c4e]/10">
-                Aura Dental Editorial
-              </span>
-              <h1 className="text-5xl md:text-6xl font-serif text-gray-900 leading-tight mb-6">
-                Odontologia<br /><span className="italic text-[#135c4e]">do Futuro</span>
+              <h1 className="text-5xl md:text-6xl font-serif text-gray-900 leading-tight mb-6 mt-8">
+                Tecnologia<br /><span className="italic text-[#135c4e]">Aplicada</span>
               </h1>
               <p className="text-lg text-gray-700 mb-8 max-w-lg">
-                Unimos a precisão da engenharia digital ao toque humano para criar experiências odontológicas que transcendem o convencional. Bem-vindo à nova era da saúde bucal.
+                Utilizamos equipamentos modernos e fluxo digital para assegurar diagnósticos assertivos e maior previsibilidade nos tratamentos.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-[#135c4e] text-white px-6 py-3 rounded-md font-accent font-medium hover:bg-[#0f4a3e] transition-colors">
+                <button onClick={() => window.scrollTo({ top: 800, behavior: 'smooth' })} className="bg-[#135c4e] text-white px-6 py-3 rounded-md font-accent font-medium hover:bg-[#0f4a3e] transition-colors">
                   Conhecer Equipamentos
                 </button>
-                <button className="bg-white text-[#135c4e] px-6 py-3 rounded-md font-accent font-medium hover:bg-gray-50 transition-colors border border-gray-200">
+                <button onClick={() => window.scrollTo({ top: 1800, behavior: 'smooth' })} className="bg-white text-[#135c4e] px-6 py-3 rounded-md font-accent font-medium hover:bg-gray-50 transition-colors border border-gray-200">
                   Nossa Metodologia
                 </button>
               </div>
@@ -29,8 +28,8 @@ export default function Technology() {
             <div className="relative">
               <div className="aspect-square rounded-3xl overflow-hidden bg-[#135c4e]/5 p-8 flex items-center justify-center">
                 <img 
-                  src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800" 
-                  alt="Scanner 3D" 
+                  src="https://images.unsplash.com/photo-1590680424578-8fc87fba4fcd?auto=format&fit=crop&q=80&w=800" 
+                  alt="Tecnologia Aplicada" 
                   className="w-full h-full object-cover rounded-2xl shadow-lg mix-blend-multiply"
                 />
               </div>
@@ -63,11 +62,11 @@ export default function Technology() {
             {/* Scanner */}
             <div className="relative rounded-2xl overflow-hidden h-[400px] group bg-gray-900">
               <img 
-                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800" 
-                alt="Scanner Intraoral" 
+                src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&q=80&w=800" 
+                alt="Scanner 3D"
                 className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105 mix-blend-overlay"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8 w-full">
                 <h3 className="text-2xl font-serif text-white mb-3">Scanners Intraorais 3D</h3>
                 <p className="text-white/80 text-sm max-w-md">
@@ -83,13 +82,10 @@ export default function Technology() {
                 <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6">
                   <span className="text-2xl">📐</span>
                 </div>
-                <h3 className="text-2xl font-serif mb-3">Planejamento Digital do Sorriso (DSD)</h3>
+                <h3 className="text-2xl font-serif mb-3">Planejamento Digital do Sorriso</h3>
                 <p className="text-white/80 text-sm leading-relaxed max-w-md">
-                  Arquitetamos seu novo sorriso digitalmente antes mesmo de tocar nos dentes. Você visualiza o resultado final e participa ativamente de cada detalhe estético.
+                  Projeto virtual com simulação de resultados antes do início do tratamento, garantindo que suas expectativas sejam mapeadas corretamente.
                 </p>
-              </div>
-              <div className="text-xs font-accent font-bold tracking-widest uppercase opacity-60 relative z-10">
-                Protocolo Predictable
               </div>
             </div>
 
@@ -100,7 +96,7 @@ export default function Technology() {
                 alt="Microscopia" 
                 className="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-105 grayscale"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8 w-full">
                 <h3 className="text-2xl font-serif text-white mb-3">Microscopia Operatória</h3>
                 <p className="text-white/80 text-sm max-w-md">
@@ -119,17 +115,17 @@ export default function Technology() {
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3 text-sm text-gray-700">
-                      <CheckCircle2 className="w-4 h-4 text-[#135c4e]" /> Sem ruído, sem trauma
+                      <CheckCircle className="w-4 h-4 text-[#135c4e]" /> Sem ruído, sem trauma
                     </li>
                     <li className="flex items-center gap-3 text-sm text-gray-700">
-                      <CheckCircle2 className="w-4 h-4 text-[#135c4e]" /> Recuperação 3x mais rápida
+                      <CheckCircle className="w-4 h-4 text-[#135c4e]" /> Recuperação 3x mais rápida
                     </li>
                   </ul>
                 </div>
-                <div className="w-48 h-48 rounded-2xl overflow-hidden flex-shrink-0 shadow-lg">
+                <div className="w-48 h-48 rounded-2xl overflow-hidden shrink-0 shadow-lg">
                   <img 
-                    src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=400" 
-                    alt="Laser" 
+                    src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&q=80&w=400" 
+                    alt="Sorriso Real" 
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -143,10 +139,10 @@ export default function Technology() {
       <section className="py-24 bg-[#135c4e] text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-5xl font-serif text-white mb-6">
-            Pilares da Nossa Tecnologia
+            Resultados Guiados por Tecnologia
           </h2>
           <p className="text-white/80 mb-16 max-w-2xl mx-auto text-lg">
-            A tecnologia não é um fim, mas um meio para entregar uma saúde excepcional com conforto absoluto.
+            Investimos em equipamentos projetados para atuar de maneira menos invasiva, promovendo recuperação rápida.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -186,12 +182,12 @@ export default function Technology() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white p-12 md:p-16 rounded-3xl shadow-sm border border-gray-100">
             <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-6">
-              Pronto para vivenciar a odontologia de alto nível?
+              Inicie seu Planejamento
             </h2>
             <p className="text-gray-600 mb-10 max-w-xl mx-auto">
-              Agende uma avaliação tecnológica e descubra como nossas ferramentas podem transformar seu sorriso com rapidez e precisão.
+              Consulte nossa equipe, tire dúvidas clínicas e aproveite toda nossa estrutura de diagnóstico.
             </p>
-            <button className="bg-[#135c4e] text-white px-8 py-4 rounded-md font-accent font-medium hover:bg-[#0f4a3e] transition-colors">
+            <button onClick={openBookingModal} className="bg-[#135c4e] text-white px-8 py-4 rounded-md font-accent font-medium hover:bg-[#0f4a3e] transition-colors">
               Marcar Consulta Agora
             </button>
           </div>

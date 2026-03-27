@@ -1,49 +1,28 @@
-import { CheckCircle2, Microscope, ScanFace, ShieldCheck } from 'lucide-react';
+import { CheckCircle, Microscope, UserFocus, ShieldCheck } from '@phosphor-icons/react';
 
 export default function Team() {
   const doctors = [
     {
-      name: 'Dr. Roberto Silva',
+      name: 'Dr. Luiz Veras',
       role: 'Diretor Clínico',
-      specialty: 'Implantodontia e Reabilitação Oral',
-      credentials: ['PHD, USP', 'MEMBRO ITI'],
-      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600',
-    },
-    {
-      name: 'Dra. Helena Martins',
-      role: 'Especialista',
-      specialty: 'Ortodontia Invisível (Invisalign)',
-      credentials: ['MESTRE UNICAMP', 'DIAMOND PROVIDER'],
-      image: 'https://images.unsplash.com/photo-1594824436998-058a231b611c?auto=format&fit=crop&q=80&w=600',
-    },
-    {
-      name: 'Dr. Carlos Eduardo',
-      role: 'Especialista',
-      specialty: 'Endodontia Microscópica',
-      credentials: ['ESP. HARVARD MED', 'MEMBRO SBE'],
-      image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=600',
-    },
-    {
-      name: 'Dra. Beatriz Costa',
-      role: 'Especialista',
-      specialty: 'Odontopediatria e Prevenção',
-      credentials: ['ESP. USP', 'CONSULTORA OMS'],
+      specialty: 'Reabilitação Oral & Estética',
+      credentials: ['@LUIZVERASS'],
       image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600',
     },
     {
-      name: 'Dr. André Luiz',
-      role: 'Especialista',
-      specialty: 'Cirurgia Bucomaxilofacial',
-      credentials: ['PHD, UNESP', 'FELLOW IAOMS'],
-      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600',
-    },
-    {
-      name: 'Dra. Carla Mendes',
-      role: 'Especialista',
-      specialty: 'Estética Dental e Lentes de Contato',
-      credentials: ['PÓS-GRAD NYU', 'MEMBRO SBOE'],
+      name: 'Dra. Sara',
+      role: 'Diretora Clínica',
+      specialty: 'Harmonização Orofacial',
+      credentials: ['@SARACJ_31'],
       image: 'https://images.unsplash.com/photo-1594824436998-058a231b611c?auto=format&fit=crop&q=80&w=600',
     },
+    {
+      name: 'Equipe Especializada',
+      role: 'Multidisciplinar',
+      specialty: 'Ortodontia · Implantes · Clínico',
+      credentials: ['ALTA PERFORMANCE'],
+      image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600',
+    }
   ];
 
   return (
@@ -51,11 +30,11 @@ export default function Team() {
       {/* Hero Section */}
       <section className="pt-24 pb-16 text-center px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#135c4e] leading-tight mb-6 max-w-4xl mx-auto">
-          Excelência em Cada Detalhe:<br />
+          Equipe Clínica:<br />
           <span className="text-gray-900">Conheça Nossos Especialistas</span>
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Nossa equipe é formada por doutores com vasta experiência acadêmica e clínica, dedicados a transformar sorrisos com precisão e cuidado humanizado.
+          Profissionais dedicados e focados nas mais variadas frentes da odontologia para proporcionar o tratamento adequado ao seu caso.
         </p>
       </section>
 
@@ -65,7 +44,7 @@ export default function Team() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {doctors.map((doctor, index) => (
               <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 group hover:shadow-md transition-shadow">
-                <div className="aspect-[4/5] overflow-hidden bg-gray-100">
+                <div className="aspect-4/5 overflow-hidden bg-gray-100">
                   <img 
                     src={doctor.image} 
                     alt={doctor.name} 
@@ -74,7 +53,7 @@ export default function Team() {
                 </div>
                 <div className="p-8">
                   <div className="flex items-center gap-2 mb-3">
-                    <CheckCircle2 className="w-4 h-4 text-[#8c6b5d]" />
+                    <CheckCircle className="w-4 h-4 text-[#8c6b5d]" />
                     <span className="text-xs font-accent font-bold text-[#8c6b5d] uppercase tracking-wider">{doctor.role}</span>
                   </div>
                   <h3 className="text-2xl font-serif text-gray-900 mb-2">{doctor.name}</h3>
@@ -100,12 +79,12 @@ export default function Team() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square lg:aspect-auto lg:h-[600px]">
               <img 
-                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1000" 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" 
                 alt="Tecnologia" 
                 className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
               />
               <div className="absolute inset-0 bg-[#135c4e]/80 mix-blend-multiply"></div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#135c4e] to-transparent opacity-90"></div>
+              <div className="absolute inset-0 bg-linear-to-tr from-[#135c4e] to-transparent opacity-90"></div>
               
               {/* Abstract Tech Overlay */}
               <div className="absolute inset-0 flex items-center justify-center opacity-30">
@@ -116,19 +95,16 @@ export default function Team() {
             </div>
 
             <div>
-              <span className="inline-block py-1 px-3 rounded-full bg-[#135c4e]/10 text-[#135c4e] text-xs font-accent font-bold tracking-wider uppercase mb-6">
-                Infraestrutura de Elite
-              </span>
               <h2 className="text-4xl md:text-5xl font-serif text-[#135c4e] leading-tight mb-6">
-                Excelência Clínica & Tecnologia
+                Estrutura de Atendimento
               </h2>
               <p className="text-gray-600 mb-12 text-lg">
-                Nossa clínica foi projetada sob os mais rigorosos padrões internacionais de biossegurança e ergonomia. Investimos continuamente em tecnologia de ponta para garantir diagnósticos precisos e tratamentos minimamente invasivos.
+                Aliamos a capacitação de nossos profissionais a espaços desenhados com critérios técnicos claros e tecnologia para auxílio clínico.
               </p>
 
               <div className="space-y-8">
                 <div className="flex gap-6">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-[#135c4e]">
+                  <div className="shrink-0 w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-[#135c4e]">
                     <Microscope className="w-6 h-6" />
                   </div>
                   <div>
@@ -138,8 +114,8 @@ export default function Team() {
                 </div>
 
                 <div className="flex gap-6">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-[#135c4e]">
-                    <ScanFace className="w-6 h-6" />
+                  <div className="shrink-0 w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-[#135c4e]">
+                    <UserFocus className="w-6 h-6" />
                   </div>
                   <div>
                     <h4 className="text-lg font-accent font-medium text-gray-900 mb-2">Escaneamento 3D Intraoral</h4>
@@ -148,7 +124,7 @@ export default function Team() {
                 </div>
 
                 <div className="flex gap-6">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-[#135c4e]">
+                  <div className="shrink-0 w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-[#135c4e]">
                     <ShieldCheck className="w-6 h-6" />
                   </div>
                   <div>

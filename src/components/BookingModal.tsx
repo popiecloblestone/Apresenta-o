@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { X, Sparkles, Stethoscope, ClipboardCheck, Activity, CheckCircle2, User, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, Sparkle, Stethoscope, ClipboardText, Heartbeat, CheckCircle, User, CaretLeft, CaretRight, Sun, Moon } from '@phosphor-icons/react';
 import { cn } from '../lib/utils';
 
 interface BookingModalProps {
@@ -39,10 +39,10 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
         {[
-          { id: 'sorriso', icon: Sparkles, label: 'Quero melhorar meu sorriso' },
+          { id: 'sorriso', icon: Sparkle, label: 'Quero melhorar meu sorriso' },
           { id: 'dor', icon: Stethoscope, label: 'Estou com dor ou desconforto' },
-          { id: 'avaliacao', icon: ClipboardCheck, label: 'Quero fazer uma avaliação' },
-          { id: 'especifico', icon: Activity, label: 'Tenho interesse em um procedimento específico' },
+          { id: 'avaliacao', icon: ClipboardText, label: 'Quero fazer uma avaliação' },
+          { id: 'especifico', icon: Heartbeat, label: 'Tenho interesse em um procedimento específico' },
         ].map((item) => (
           <button
             key={item.id}
@@ -97,7 +97,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     : "border-gray-200 text-gray-600 hover:border-gray-300 bg-white"
                 )}
               >
-                {isSelected && <CheckCircle2 className="w-4 h-4" />}
+                {isSelected && <CheckCircle className="w-4 h-4" />}
                 {proc}
               </button>
             );
@@ -105,7 +105,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         </div>
 
         <div className="bg-[#f8f5f2] rounded-xl p-6 flex gap-4 items-start border-l-4 border-[#8c6b5d]">
-          <div className="bg-[#8c6b5d] text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-sm font-accent font-bold mt-0.5">i</div>
+          <div className="bg-[#8c6b5d] text-white rounded-full w-6 h-6 flex items-center justify-center shrink-0 text-sm font-accent font-bold mt-0.5">i</div>
           <div>
             <h4 className="font-accent font-medium text-gray-900 mb-1">Dica de Especialista</h4>
             <p className="text-sm text-gray-600">Você pode selecionar múltiplos itens. Isso nos ajuda a preparar uma equipe multidisciplinar para sua primeira consulta.</p>
@@ -146,7 +146,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
             )}
           >
             <div className={cn("w-10 h-10 rounded-full flex items-center justify-center mb-4", isPatient === true ? "bg-[#135c4e] text-white" : "bg-gray-100 text-gray-500")}>
-              <CheckCircle2 className="w-5 h-5" />
+              <CheckCircle className="w-5 h-5" />
             </div>
             <h3 className={cn("text-lg font-accent font-medium mb-2", isPatient === true ? "text-[#135c4e]" : "text-gray-900")}>Sim, já sou paciente</h3>
             <p className="text-gray-500 text-sm">Buscaremos seus dados automaticamente.</p>
@@ -198,7 +198,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               disabled={isPatient === null || !name || !phone}
               className="bg-[#135c4e] text-white px-8 py-3 rounded-md font-accent font-medium disabled:opacity-50 flex items-center gap-2 hover:bg-[#0f4a3e] transition-colors"
             >
-              Próximo Passo <ChevronRight className="w-4 h-4" />
+              Próximo Passo <CaretRight className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -221,8 +221,8 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           <div className="flex justify-between items-center mb-8">
             <h3 className="text-lg font-accent font-medium text-gray-900">Novembro 2024</h3>
             <div className="flex gap-2">
-              <button className="p-1 hover:bg-gray-100 rounded-full"><ChevronLeft className="w-5 h-5 text-gray-600" /></button>
-              <button className="p-1 hover:bg-gray-100 rounded-full"><ChevronRight className="w-5 h-5 text-gray-600" /></button>
+              <button aria-label="Mês anterior" className="p-1 hover:bg-gray-100 rounded-full"><CaretLeft className="w-5 h-5 text-gray-600" /></button>
+              <button aria-label="Próximo mês" className="p-1 hover:bg-gray-100 rounded-full"><CaretRight className="w-5 h-5 text-gray-600" /></button>
             </div>
           </div>
           
@@ -257,7 +257,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         <div>
           <div className="mb-8">
             <h4 className="flex items-center gap-2 text-gray-900 font-accent font-medium mb-4">
-              <span className="text-orange-500">☀️</span> Manhã
+              <Sun className="w-5 h-5 text-orange-500" weight="fill" /> Manhã
             </h4>
             <div className="grid grid-cols-3 gap-3">
               {['08:00', '09:00', '09:30', '10:00', '11:30'].map(t => (
@@ -277,7 +277,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
           <div className="mb-10">
             <h4 className="flex items-center gap-2 text-gray-900 font-accent font-medium mb-4">
-              <span className="text-blue-500">🌙</span> Tarde
+              <Moon className="w-5 h-5 text-blue-500" weight="fill" /> Tarde
             </h4>
             <div className="grid grid-cols-3 gap-3">
               {['14:00', '14:30', '15:00', '16:30', '17:00', '18:00'].map(t => (
@@ -297,7 +297,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
           <div className="bg-gray-50 rounded-xl p-6">
             <div className="flex items-center gap-4 mb-6">
-              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=100&h=100" alt="Dr. Eduardo Silveira" className="w-12 h-12 rounded-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=100&h=100" alt="Dr. Luiz Veras" className="w-12 h-12 rounded-full object-cover" />
               <div>
                 <h5 className="font-accent font-medium text-gray-900">Dr. Eduardo Silveira</h5>
                 <p className="text-xs text-gray-500">Implantes e Reabilitação Oral</p>
@@ -330,7 +330,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         {/* Header */}
         <div className="flex justify-between items-center p-6 border-b border-gray-100 bg-white">
           <div className="text-xl font-accent font-bold text-[#135c4e]">Life Odontologia</div>
-          <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+          <button aria-label="Fechar" onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
             <X className="w-6 h-6 text-gray-500" />
           </button>
         </div>
@@ -355,7 +355,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         </div>
 
         {/* Content Area */}
-        <div className="flex-grow overflow-y-auto p-8 md:p-12">
+        <div className="grow overflow-y-auto p-8 md:p-12">
           {step === 1 && renderStep1()}
           {step === 2 && renderStep2()}
           {step === 3 && renderStep3()}
